@@ -4,7 +4,7 @@ MacOS Sierra inspired dark theme for Fluxbox window manager. This is a fork base
 ![preview1](preview1.png?raw=true)
 
 ![preview2](preview2.png?raw=true)
-Note that the composition is from Jonaburg's Picom fork (Yes I'm using Plasma with Fluxbox, which may appear a strange combination).
+Note that the composition is from <a href="https://github.com/jonaburg/picom">Jonaburg's Picom fork</a> (Yes I'm using Plasma with Fluxbox, which may appear a strange combination but it's nice for me).
 
 <H1>Installation</H1>
 
