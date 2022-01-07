@@ -26,7 +26,7 @@ For system level:
         
 After that you can apply it via the built-in Fluxbox's menus, or directly at <code>~/.fluxbox/init</code> (you will need to restart the window manager if do this):
 
-    session.styleFile:      /home/USER/.fluxbox/styles/Sierra-Dark
+    session.styleFile:      /home/USER/.fluxbox/styles/Sierra-Dark-Fluxbox
     
 If you want that new users have this theme installed, copy this theme to <code>skel</code> directory:
 
@@ -103,7 +103,7 @@ Finally change your current style to Kvantum. This can be done at the GUI or edi
 
 If for some reason you want to change the default font, you will need to replace the lines that declares it. I initially made this fork with the <a href="https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts">San Francisco Pro Fonts</a> but I can't include them by legal reasons, so I will use them for this example.
 
-    sed -i 's/Roboto/SF Pro Display/g' $HOME/.fluxbox/styles/Sierra-Dark/theme.cfg
+    sed -i 's/Roboto/SF Pro Display/g' $HOME/.fluxbox/styles/Sierra-Dark-Fluxbox/theme.cfg
     
 This can be applied for whatever font you want. After the change, restart the window manager.
 
