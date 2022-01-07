@@ -24,7 +24,7 @@ For system level:
     # FreeBSD systems
         # cp -r Sierra-Dark-Fluxbox /usr/local/share/fluxbox/styles/
         
-After that you can apply it via the built-in Fluxbox's menus, or directly at <code>~/.fluxbox/init</code>:
+After that you can apply it via the built-in Fluxbox's menus, or directly at <code>~/.fluxbox/init</code> (you will need to restart the window manager if do this):
 
     session.styleFile:      /home/USER/.fluxbox/styles/Sierra-Dark
     
