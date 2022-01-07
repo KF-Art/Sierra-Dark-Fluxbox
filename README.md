@@ -23,7 +23,10 @@ For system level:
     
     # FreeBSD systems
         # cp -r Sierra-Dark-Fluxbox /usr/local/share/fluxbox/styles/
-    
+        
+After that you can apply it via the built-in Fluxbox's menus, or directly at <code>~/.fluxbox/init</code>:
+
+    session.styleFile:      /home/USER/.fluxbox/styles/Sierra-Dark
     
 If you want that new users have this theme installed, copy this theme to <code>skel</code> directory:
 
@@ -85,7 +88,7 @@ Following the Graphite's line, and in order to have a desktop consistency, I als
     # Replace the #4DB6AC (Teal) accent color by the one you prefer.
     sed -i 's/#e0e0e0/#4DB6AC/g' $HOME/.config/Kvantum/Graphite/GraphiteDark.svg
     
-    # Only do this if some menus fonts look weird with the new accent color.
+    # Only do this if some menus text look weird with the new accent color.
     sed -i 's/text.focus.color=#dfdfdf/text.focus.color=white/g' $HOME/.config/Kvantum/Graphite/GraphiteDark.kvconfig
     
 Install Qt5ct and export the following variable to your <code>profile</code> file.
@@ -100,9 +103,9 @@ Finally change your current style to Kvantum. This can be done at the GUI or edi
 
 If for some reason you want to change the default font, you will need to replace the lines that declares it. I initially made this fork with the <a href="https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts">San Francisco Pro Fonts</a> but I can't include them by legal reasons, so I will use them for this example.
 
-    sed -i 's/Roboto/"SF Pro Display"/g' $HOME/.fluxbox/style/Sierra-Dark/theme.cfg
+    sed -i 's/Roboto/SF Pro Display/g' $HOME/.fluxbox/styles/Sierra-Dark/theme.cfg
     
-This can be applied for whatever font you want.
+This can be applied for whatever font you want. After the change, restart the window manager.
 
 <H1>Why not upload this to Pling/OpenDesktop?</H1>
 
