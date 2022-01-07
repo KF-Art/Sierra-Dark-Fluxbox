@@ -1,5 +1,5 @@
 # Sierra-Dark-Fluxbox
-MacOS Sierra inspired dark theme for Fluxbox window manager.
+MacOS Sierra inspired dark theme for Fluxbox window manager. This is a fork based on JUANFGS's Sierra theme at <a href="https://www.pling.com/p/1229892/">Pling</a>. All credits goes to him.
 
 ![preview1](preview1.png?raw=true)
 
@@ -18,15 +18,26 @@ Proceed with installation. For one user:
 
 For system level:
 
-    cp -r Sierra-Dark-Fluxbox /usr/share/fluxbox/styles/
+    # Linux based systems
+        # cp -r Sierra-Dark-Fluxbox /usr/share/fluxbox/styles/
+    
+    # FreeBSD systems
+        # cp -r Sierra-Dark-Fluxbox /usr/local/share/fluxbox/styles/
+    
     
 If you want that new users have this theme installed, copy this theme to <code>skel</code> directory:
 
-    # mkdir -p /etc/skel/.fluxbox/styles/
-    # cp -r Sierra-Dark-Fluxbox /etc/skel/.fluxbox/styles/
-    
+    # Linux based systems
+        # mkdir -p /etc/skel/.fluxbox/styles/
+        # cp -r Sierra-Dark-Fluxbox /etc/skel/.fluxbox/styles/
+        
+    # FreeBSD
+        # mkdir -p /usr/local/etc/skel/.fluxbox/styles/
+        # cp -r Sierra-Dark-Fluxbox /usr/local/etc/skel/.fluxbox/styles/
+        
 <H2>Additional font dependency</H2>    
-The Roboto fonts are necessary for the theme work properly. 
+The Roboto fonts are necessary for the theme work properly, unless you change the default font as is explained below.
+
 
 Void Linux:
 
@@ -61,18 +72,40 @@ This theme was made with the idea on combining well with <a href="https://github
     ./install.sh -t all -c dark --tweaks black
     
  <H2>Kvantum theme</H2> 
-Following the Graphite's line, I also recommend the kvantum variant. This one is tricky, because it does not include any other color variant, but we can change the color scheme with any "Find & Replace" function. Here, we'll use <code>sed</code>.
+ 
+Following the Graphite's line, and in order to have a desktop consistency, I also recommend the kvantum version. This one is tricky, because it does not include any other color variant, but we can change the color scheme with any "Find & Replace" function. Here, we'll use <code>sed</code>.
 
     git clone https://github.com/vinceliuice/Graphite-kde-theme
     cp -r Graphite-kde-theme/Kvantum/Graphite $HOME/.config/Kvantum
     
     # Change to blackness color scheme.
     sed -i 's/#2c2c2c/#0f0f0f/g' $HOME/.config/Kvantum/Graphite/GraphiteDark.{kvconfig,svg}
-    sed -i 's/text.focus.color=#dfdfdf/text.focus.color=white/g' $HOME/.config/Kvantum/Graphite/GraphiteDark.kvconfig
     
-    # Accent color
+    # Accent color (optional)
     # Replace the #4DB6AC (Teal) accent color by the one you prefer.
     sed -i 's/#e0e0e0/#4DB6AC/g' $HOME/.config/Kvantum/Graphite/GraphiteDark.svg
     
-Install Qt5ct and export the following variable to your profile file.
+    # Only do this if some menus fonts look weird with the new accent color.
+    sed -i 's/text.focus.color=#dfdfdf/text.focus.color=white/g' $HOME/.config/Kvantum/Graphite/GraphiteDark.kvconfig
+    
+Install Qt5ct and export the following variable to your <code>profile</code> file.
+
+    echo "export QT_QPA_PLATFORMTHEME=qt5ct" >> ~/.profile
+    
+Finally change your current style to Kvantum. This can be done at the GUI or editing <code>~/.config/qt5ct/qt5ct.conf</code>:
+
+    style=kvantum-dark
+    
+<H2>Alternative fonts</H2>
+
+If for some reason you want to change the default font, you will need to replace the lines that declares it. I initially made this fork with the <a href="https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts">San Francisco Pro Fonts</a> but I can't include them by legal reasons, so I will use them for this example.
+
+    sed -i 's/Roboto/"SF Pro Display"/g' $HOME/.fluxbox/style/Sierra-Dark/theme.cfg
+    
+This can be applied for whatever font you want.
+
+<H1>Why not upload this to Pling/OpenDesktop?</H1>
+
+I had a bad experience uploading a theme fork at OpenDesktop. Even giving the respective credits and adding the original GitHub repository, my account got banned. After that, I decided that the only way that I would upload something to there, is if the theme is 100% mine and not a fork. But feel free to fork this theme and upload it to OpenDesktop or any platform.
+
     
